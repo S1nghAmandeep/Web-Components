@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complex components</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+
+        body {
+            margin: 2rem;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <uc-modal>
+        <h1 slot="title">Her goes the title</h1>
+        <p>With your confirmation you will be able to see the details</p>
+    </uc-modal>
+    <p>Please confirm your chioce</p>
+    <button id="open-modal-btn">Show Details & Confirm</button>
+
+    <script>
+        const modal = document.querySelector('uc-modal');
+        const openModalBtn = document.querySelector('#open-modal-btn');
+
+
+        modal.addEventListener('confirm', () => {
+            console.log('confirmed...');
+        });
+
+        modal.addEventListener('cancel', () => {
+            console.log('cancelled...');
+        });
+    </script>
+</body>
+<script src="modal.js"></script>
+
+</html>
