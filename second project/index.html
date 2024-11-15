@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second project</title>
+    <script src="tooltip.js"></script>
+    <script src="confirm-link.js"></script>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #2f7fe9;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <p>
+        <far-tooltip text="Web component is a set of standerds.">
+            <span class="highlight">We Components</span></far-tooltip>
+        are awesome!!
+    </p>
+    <far-tooltip class="something"></far-tooltip>
+    <a is="far-confirm-link" href="https://www.google.com">Google</a>
+</body>
+
+</html>
