@@ -22,7 +22,7 @@ class Modal extends HTMLElement {
         z-index: 11;
         position: fixed;
         width: 50%;
-        top: -50vh;
+        top: 15vh;
         left: 25%;
         transform: translateY(-50%);
         background: white;
