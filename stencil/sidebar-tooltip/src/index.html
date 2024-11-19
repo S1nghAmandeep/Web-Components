@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <title>Stencil Component Starter</title>
+
+    <script type="module" src="/build/web-components-stencil.esm.js"></script>
+    <script nomodule src="/build/web-components-stencil.js"></script>
+
+    <style>
+      body {
+        font-family: sans-serif;
+      }
+
+      .side-nav ul {
+        list-style: none;
+      }
+
+      .side-nav li {
+        margin: 1rem 0;
+      }
+
+      .side-nav a {
+        text-decoration: none;
+        color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="side-drawer-btn">Open Side Menu</button>
+      
+    <p>Let's test the new <uc-tooltip text="Here goes the text of the tooltip">Tooltip!</uc-tooltip></p>
+
+      <uc-side-drawer title="Main Menu">
+        <nav class="side-nav">
+          <ul>
+            <li><a href="#">A link 1</a></li>
+            <li><a href="#">A link 2</a></li>
+            <li><a href="#">A link 3</a></li>
+          </ul>
+        </nav>
+      </uc-side-drawer>
+
+      <button id="tooltip-btn">Apri tooltip</button>
+
+      <script>
+        const sideDrawer = document.querySelector('uc-side-drawer');
+        const opneSideDrawerBtn = document.querySelector('#side-drawer-btn');
+
+        opneSideDrawerBtn.addEventListener('click', () => {
+          if(!sideDrawer.opened) {
+            // sideDrawer.opened = true;
+            sideDrawer.open();
+          }
+        });
+
+        const tooltipBtn = document.querySelector('#tooltip-btn');
+        const tootip = document.querySelector('uc-tooltip');
+        tooltipBtn.addEventListener('click', () => {
+          tootip.toggleTooltip();
+        })
+
+
+        setTimeout(() => {
+          // sideDrawer.title = 'It changed';
+          // sideDrawer.setAttribute('title', 'now changed the title via attribute')
+        }, 3000);
+      </script>
+  </body>
+</html>
