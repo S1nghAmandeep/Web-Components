@@ -56,6 +56,7 @@ class Tooltip extends HTMLElement {
     `;
   }
 
+  //**PERMETTE DI ACCEDERE AI VARI ELEMENTI DEL DOM COME (tag, attrubuti ecc...)*/
   connectedCallback() {
     if (this.hasAttribute("text")) {
       this._tooltipText = this.getAttribute("text");
@@ -88,7 +89,7 @@ class Tooltip extends HTMLElement {
   }
 
 
-  // questo render methods serve per avere tutti gli elementi del dom in un'unico posto e non avere disordine nel codice
+  //**  questo render methods serve per avere tutti gli elementi del dom in un'unico posto e non avere disordine nel codice */
   _render() {
     let tooltipContainer = this.shadowRoot.querySelector("div");
     if (this._tooltipVisible) {
