@@ -36,5 +36,4 @@ class ToopTip extends HTMLElement {
     this._toggleButton.textContent = this._isVisible ? "Hide" : "Show";
   }
 }
-
 customElements.define("test-tooltip", ToopTip);

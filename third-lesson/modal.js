@@ -130,12 +130,15 @@ connectedCallback() {
 
   _cancel(event) {
     this._close();
+    //** BUBBLES serve se l'evento deve andare al padre oppure rimanere nella classe */
+    //** COMPOSED serve se l'evento deve andare al padre oppure rimanere nel shadow DOM */
     const cancelEvent = new Event('cancel', { bubbles: true, composed: true });
     event.target.dispatchEvent(cancelEvent);
   }
 
-  _confirm(e) {
+  _confirm() {
     this._close();
+    //** Con this.dispatchEvent() l'evento viene propagato al padre perchè viene creato nel COMPONENTE quindi non serve BUBBLES e COMPOSED */
     const confirmEvent = new Event('confirm');
     this.dispatchEvent(confirmEvent);
   }
